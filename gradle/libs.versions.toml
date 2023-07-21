@@ -1,0 +1,80 @@
+[versions]
+
+compileSdk = "34"
+minSdk = "26"
+targetSdk = "34"
+versionCode = "1"
+versionName = "1.0"
+jvmTarget = "17"
+kotlinCompilerExtensionVersion = "1.5.0"
+
+blurry = "4.0.1"
+constraintlayout = "1.0.1"
+glide = "4.15.1"
+matrixSDK2 = "1.5.30"
+okhttp3 = "4.10.0"
+
+androidGradlePlugin = "8.0.2"
+jetbrainsKotlin = "1.9.0"
+hiltAndroid = "2.47"
+
+androidXCore = "1.10.1"
+androidxAppcompat = "1.6.1"
+androidxLifecycle = "2.6.1"
+androidxActivity = "1.7.2"
+hiltNavigation = "1.0.0"
+
+composeUiVersion = "1.4.3"
+androidxComposeMaterial = "1.4.3"
+junitVer = "4.13.2"
+androidxTestExtjunit = "1.1.5"
+androidxTestEspressoCore = "3.5.1"
+androidxNavigationCompose = "2.6.0"
+comGoogleAndroidMaterial = "1.9.0"
+
+roomRersion = "2.5.2"
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "androidGradlePlugin" }
+android-library = { id = "com.android.library", version.ref = "androidGradlePlugin" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "jetbrainsKotlin" }
+hilt-android = { id = "com.google.dagger.hilt.android", version.ref = "hiltAndroid" }
+
+[libraries]
+androidx-core = { module = "androidx.core:core-ktx", version.ref = "androidXCore" }
+androidx-appcompat = { module = "androidx.appcompat:appcompat", version.ref = "androidxAppcompat" }
+androidx-lifecycle = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "androidxLifecycle" }
+androidx-activity = { module = "androidx.activity:activity-compose", version.ref = "androidxActivity" }
+com-google-android-material = { module = "com.google.android.material:material", version.ref = "comGoogleAndroidMaterial" }
+
+androidx-compose-ui = { module = "androidx.compose.ui:ui", version.ref = "composeUiVersion" }
+androidx-compose-ui-preview = { module = "androidx.compose.ui:ui-tooling-preview", version.ref = "composeUiVersion" }
+androidx-compose-ui-test-junit4 = { module = "androidx.compose.ui:ui-test-junit4", version.ref = "composeUiVersion" }
+androidx-compose-ui-tooling = { module = "androidx.compose.ui:ui-tooling", version.ref = "composeUiVersion" }
+androidx-compose-ui-test-manifest = { module = "androidx.compose.ui:ui-test-manifest", version.ref = "composeUiVersion" }
+
+androidx-compose-material = { module = "androidx.compose.material:material", version.ref = "androidxComposeMaterial" }
+junit = { module = "junit:junit", version.ref = "junitVer" }
+androidx-test-ext-junit = { module = "androidx.test.ext:junit", version.ref = "androidxTestExtjunit" }
+androidx-test-espresso-core = { module = "androidx.test.espresso:espresso-core", version.ref = "androidxTestEspressoCore" }
+
+androidx-navigation-compose = { module = "androidx.navigation:navigation-compose", version.ref = "androidxNavigationCompose" }
+
+androidx-hilt-navigation-compose = { module = "androidx.hilt:hilt-navigation-compose", version.ref = "hiltNavigation" }
+com-google-dagger-hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hiltAndroid" }
+com-google-dagger-hilt-android-compiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "hiltAndroid" }
+
+androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "roomRersion" }
+androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref = "roomRersion" }
+
+jp-wasabeef-blurry = { module = "jp.wasabeef:blurry", version.ref = "blurry" }
+
+androidx-constraintlayout-compose = { module = "androidx.constraintlayout:constraintlayout-compose", version.ref = "constraintlayout" }
+
+com-github-bumptech-glide = { module = "com.github.bumptech.glide:glide", version.ref = "glide" }
+
+org-matrix-android-sdk2 = { module = "org.matrix.android:matrix-android-sdk2", version.ref = "matrixSDK2" }
+
+com-squareup-okhttp3-okhttp-bom = { module = "com.squareup.okhttp3:okhttp-bom", version.ref = "okhttp3" }
+com-squareup-okhttp3-okhttp = { group = "com.squareup.okhttp3", name = "okhttp" }
+com-squareup-okhttp3-logging-interceptor = { group = "com.squareup.okhttp3", name = "logging-interceptor" }

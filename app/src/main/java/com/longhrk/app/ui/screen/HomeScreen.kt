@@ -23,7 +23,6 @@ fun HomeScreen(
     var backPressTime = 0L
 
     BackHandler {
-
         //handle when user back to out app
         if (backPressTime + 1500 > System.currentTimeMillis()) {
             onBackPress()

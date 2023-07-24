@@ -2,6 +2,9 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
 
+    //firebase
+    alias(libs.plugins.gms.google.services)
+
     //dagger
     kotlin("kapt")
     alias(libs.plugins.hilt.android)
@@ -12,7 +15,7 @@ android {
     compileSdk = libs.versions.compileSdk.get().toInt()
 
     defaultConfig {
-        applicationId = "com.example.app"
+        applicationId = "im.vector.app"
         minSdk = libs.versions.minSdk.get().toInt()
         targetSdk = libs.versions.targetSdk.get().toInt()
         versionCode = libs.versions.versionCode.get().toInt()
@@ -68,7 +71,6 @@ dependencies {
 
     implementation(libs.androidx.compose.ui)
     implementation(libs.androidx.compose.ui.preview)
-    implementation("com.google.android.gms:play-services-basement:18.2.0")
     androidTestImplementation(libs.androidx.compose.ui.test.junit4)
     debugImplementation(libs.androidx.compose.ui.tooling)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
@@ -97,4 +99,10 @@ dependencies {
 
     //matrix
     implementation(libs.org.matrix.android.sdk2)
+
+    //firebase
+    val firebaseBom = platform(libs.firebase.bom)
+    implementation(firebaseBom)
+    implementation(libs.gms.play.services.basement)
+    implementation(libs.firebase.messaging.ktx)
 }

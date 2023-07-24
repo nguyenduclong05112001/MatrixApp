@@ -23,6 +23,7 @@ androidxAppcompat = "1.6.1"
 androidxLifecycle = "2.6.1"
 androidxActivity = "1.7.2"
 hiltNavigation = "1.0.0"
+googleServices = "4.3.15"
 
 composeUiVersion = "1.4.3"
 androidxComposeMaterial = "1.4.3"
@@ -32,6 +33,10 @@ androidxTestEspressoCore = "3.5.1"
 androidxNavigationCompose = "2.6.0"
 comGoogleAndroidMaterial = "1.9.0"
 
+firebaseBom = "32.1.1"
+gmsPlayServicesBasement = "32.1.1"
+firebaseMessagingKtx = "23.2.0"
+
 roomRersion = "2.5.2"
 
 [plugins]
@@ -39,8 +44,13 @@ android-application = { id = "com.android.application", version.ref = "androidGr
 android-library = { id = "com.android.library", version.ref = "androidGradlePlugin" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "jetbrainsKotlin" }
 hilt-android = { id = "com.google.dagger.hilt.android", version.ref = "hiltAndroid" }
+gms-google-services = { id = "com.google.gms.google-services", version.ref = "googleServices" }
 
 [libraries]
+firebase-bom = { module = "com.google.firebase:firebase-bom", version.ref = "firebaseBom" }
+gms-play-services-basement = { module = "com.google.android.gms:play-services-basement", version.ref = "gmsPlayServicesBasement" }
+firebase-messaging-ktx = { module = "com.google.firebase:firebase-messaging-ktx", version.ref = "firebaseMessagingKtx" }
+
 androidx-core = { module = "androidx.core:core-ktx", version.ref = "androidXCore" }
 androidx-appcompat = { module = "androidx.appcompat:appcompat", version.ref = "androidxAppcompat" }
 androidx-lifecycle = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "androidxLifecycle" }

@@ -1,16 +1,21 @@
 package com.longhrk.app.ui
 
+import android.util.Log
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.stringResource
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.longhrk.app.MainActivity
+import com.longhrk.app.R
 import com.longhrk.app.ui.event.NavEvent
 import com.longhrk.app.ui.screen.HomeScreen
 import com.longhrk.app.ui.screen.SplashScreen
 import com.longhrk.app.ui.screen.login.AuthScreen
+import com.longhrk.app.util.pushNewToken
 import com.longhrk.matrix.viewmodel.MatrixViewModel
 
 @Composable
@@ -19,6 +24,10 @@ fun NavGraph(eventHandler: EventHandler, navController: NavHostController) {
     val activity = LocalContext.current as MainActivity
 
     val matrixViewModel = hiltViewModel<MatrixViewModel>()
+
+    LaunchedEffect(Unit) {
+        Log.d("sdadsada", "token: ${matrixViewModel.getToken()}")
+    }
 
     NavHost(navController, startDestination) {
         composable(NavTarget.Splash.route) {

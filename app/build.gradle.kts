@@ -103,6 +103,5 @@ dependencies {
     //firebase
     val firebaseBom = platform(libs.firebase.bom)
     implementation(firebaseBom)
-    implementation(libs.gms.play.services.basement)
     implementation(libs.firebase.messaging.ktx)
 }

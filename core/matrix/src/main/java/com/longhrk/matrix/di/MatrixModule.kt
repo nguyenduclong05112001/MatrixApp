@@ -1,6 +1,7 @@
 package com.longhrk.matrix.di
 
 import android.content.Context
+import com.longhrk.data.preference.AppSharedPreference
 import com.longhrk.matrix.util.RoomDisplayNameFallbackProviderImpl
 import com.longhrk.matrix.viewmodel.MatrixViewModel
 import com.longhrk.matrix.viewmodel.repo.MatrixRepo
@@ -32,5 +33,6 @@ class MatrixModule {
 
     @Provides
     @Singleton
-    fun providesMatrixViewModel(rpo: MatrixRepo) = MatrixViewModel(rpo)
+    fun providesMatrixViewModel(repo: MatrixRepo, sharedPreferences: AppSharedPreference) =
+        MatrixViewModel(repo, sharedPreferences)
 }

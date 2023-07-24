@@ -37,7 +37,8 @@
                 tools:node="remove" />
         </provider>
 
-        <service android:name="com.longhrk.MFFirebaseMessagingService"
+        <service
+            android:name="com.longhrk.MFFirebaseMessagingService"
             android:exported="false"
             tools:ignore="Instantiatable">
             <intent-filter>

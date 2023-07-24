@@ -3,6 +3,8 @@ package com.longhrk.data.di
 import android.content.Context
 import android.content.SharedPreferences
 import androidx.room.Room
+import com.longhrk.data.Const.DATABASE_NAME_APP
+import com.longhrk.data.Const.SHARE_PREFERENCE_APP
 import com.longhrk.data.database.AppDatabase
 import dagger.Module
 import dagger.Provides
@@ -20,13 +22,13 @@ class DataModule {
     fun providesSharePreference(
         @ApplicationContext context: Context,
     ): SharedPreferences {
-        return context.getSharedPreferences("preference_name", Context.MODE_PRIVATE)
+        return context.getSharedPreferences(SHARE_PREFERENCE_APP, Context.MODE_PRIVATE)
     }
 
     @DatabaseName
     @Provides
     @Singleton
-    fun provideDatabaseName() = "data_local.db"
+    fun provideDatabaseName() = DATABASE_NAME_APP
 
     @Provides
     @Singleton

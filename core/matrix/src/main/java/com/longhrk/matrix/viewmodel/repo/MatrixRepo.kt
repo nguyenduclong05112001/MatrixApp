@@ -3,16 +3,18 @@ package com.longhrk.matrix.viewmodel.repo
 import android.content.Context
 import android.net.Uri
 import android.widget.Toast
+import com.longhrk.data.preference.AppSharedPreference
 import org.matrix.android.sdk.api.Matrix
 import org.matrix.android.sdk.api.auth.data.HomeServerConnectionConfig
 import org.matrix.android.sdk.api.session.Session
 import javax.inject.Inject
 
-class MatrixRepo @Inject constructor(private val matrix: Matrix) {
-
+class MatrixRepo @Inject constructor(
+    private val matrix: Matrix
+) {
     fun getCurrentSession(): Session? {
         val session = matrix.authenticationService().getLastAuthenticatedSession()
-        if (session != null){
+        if (session != null) {
             session.open()
             session.syncService().startSync(true)
         }

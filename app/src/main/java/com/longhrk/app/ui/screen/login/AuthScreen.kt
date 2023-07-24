@@ -47,7 +47,7 @@ fun AuthScreen(
 ) {
     val currentSession by matrixViewModel.currentSession.collectAsState()
 
-    LaunchedEffect(Unit){
+    LaunchedEffect(currentSession){
         if (currentSession != null){
             onHomeScreen()
         }

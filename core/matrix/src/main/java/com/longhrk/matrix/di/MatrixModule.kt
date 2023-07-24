@@ -2,6 +2,7 @@ package com.longhrk.matrix.di
 
 import android.content.Context
 import com.longhrk.matrix.util.RoomDisplayNameFallbackProviderImpl
+import com.longhrk.matrix.viewmodel.MatrixViewModel
 import com.longhrk.matrix.viewmodel.repo.MatrixRepo
 import dagger.Module
 import dagger.Provides
@@ -28,4 +29,8 @@ class MatrixModule {
     @Provides
     @Singleton
     fun providesRepoMatrix(matrix: Matrix) = MatrixRepo(matrix)
+
+    @Provides
+    @Singleton
+    fun providesMatrixViewModel(rpo: MatrixRepo) = MatrixViewModel(rpo)
 }

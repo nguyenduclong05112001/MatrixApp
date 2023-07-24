@@ -21,7 +21,6 @@ fun SplashScreen(
     val currentSession by matrixViewModel.currentSession.collectAsState()
 
     LaunchedEffect(Unit) {
-        matrixViewModel.getSession()
         delay(2000L)
         if (currentSession == null) onLoginScreen() else onHomeScreen()
     }

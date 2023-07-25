@@ -4,4 +4,6 @@
 
     <string name="login">Login</string>
     <string name="register">Register</string>
+
+    <string name="chats">Chats</string>
 </resources>

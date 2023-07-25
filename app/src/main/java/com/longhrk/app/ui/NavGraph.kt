@@ -67,12 +67,13 @@ fun NavGraph(eventHandler: EventHandler, navController: NavHostController) {
 
         composable(NavTarget.Home.route) {
             HomeScreen(
-                onNextScreen = {
+                onDetailChatScreen = {
 
                 },
                 onBackPress = {
                     activity.finish()
-                }
+                },
+                matrixViewModel = matrixViewModel
             )
         }
     }

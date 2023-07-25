@@ -104,4 +104,7 @@ dependencies {
     val firebaseBom = platform(libs.firebase.bom)
     implementation(firebaseBom)
     implementation(libs.firebase.messaging.ktx)
+
+    //coil
+    implementation("io.coil-kt:coil-compose:2.4.0")
 }

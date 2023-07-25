@@ -25,10 +25,6 @@ fun NavGraph(eventHandler: EventHandler, navController: NavHostController) {
 
     val matrixViewModel = hiltViewModel<MatrixViewModel>()
 
-    LaunchedEffect(Unit) {
-        Log.d("sdadsada", "token: ${matrixViewModel.getToken()}")
-    }
-
     NavHost(navController, startDestination) {
         composable(NavTarget.Splash.route) {
             SplashScreen(

@@ -20,7 +20,6 @@ class MFApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
-        Log.d("sdadsada", "onCreate: ")
         matrixViewModel.getSession()
         val token = matrixViewModel.getToken()
         val currentSession = matrixViewModel.currentSession.value

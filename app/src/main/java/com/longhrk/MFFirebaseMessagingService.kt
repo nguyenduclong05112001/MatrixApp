@@ -9,13 +9,15 @@ import android.content.Intent
 import android.graphics.BitmapFactory
 import android.media.RingtoneManager
 import android.util.Log
+import androidx.activity.viewModels
 import androidx.core.app.NotificationCompat
-import androidx.lifecycle.MutableLiveData
 import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.firebase.messaging.RemoteMessage
 import com.longhrk.app.MainActivity
 import com.longhrk.app.R
+import com.longhrk.app.ui.viewmodel.NavViewModel
 import com.longhrk.app.util.pushNewToken
+import com.longhrk.data.preference.AppSharedPreference
 import com.longhrk.matrix.viewmodel.MatrixViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.CoroutineScope
@@ -23,44 +25,21 @@ import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
-object EventFromService {
-    val serviceEvent: MutableLiveData<String> by lazy {
-        MutableLiveData<String>()
-    }
-}
-
 @AndroidEntryPoint
 class MFFirebaseMessagingService : FirebaseMessagingService() {
-    init {
-        Log.d("sdadsada", "MFFirebaseMessagingService: ")
-    }
 
     @Inject
-    lateinit var matrixViewModel: MatrixViewModel
-
-    private val scope = CoroutineScope(SupervisorJob())
-
-    private val currentSession = matrixViewModel.currentSession.value
+    lateinit var sharedPreference: AppSharedPreference
 
     override fun onMessageReceived(message: RemoteMessage) {
         super.onMessageReceived(message)
-        Log.d("sdadsada", "onMessageReceived: ")
-        currentSession?.syncService()?.requireBackgroundSync()
-        sendNotification(currentSession?.myUserId.toString())
+        sendNotification(sharedPreference.getToken())
     }
 
-
     override fun onNewToken(token: String) {
-        Log.d("sdadsada", "onNewToken: ")
         super.onNewToken(token)
-
-        if (currentSession == null && !matrixViewModel.getStatusSession()) {
-            matrixViewModel.setToken(token)
-        } else {
-            val context = applicationContext
-            scope.launch {
-                pushNewToken(currentSession, context, token, getString(R.string.pusher_http_url))
-            }
+        if (!sharedPreference.getStatusSession()) {
+            sharedPreference.setToken(token)
         }
     }
 

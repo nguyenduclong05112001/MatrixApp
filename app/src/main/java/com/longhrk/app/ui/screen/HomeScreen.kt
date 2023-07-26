@@ -99,7 +99,7 @@ fun HomeScreen(
             onValueChange = {},
             onButtonClickSearch = { },
             onButtonClick = { },
-            photo = Uri.EMPTY
+            matrixViewModel = matrixViewModel
         )
 
         Spacer(modifier = Modifier.size(GetDimension.dimensionOf(res = resDimension.dimen._10sdp)))

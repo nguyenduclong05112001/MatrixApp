@@ -34,9 +34,13 @@ androidxNavigationCompose = "2.6.0"
 comGoogleAndroidMaterial = "1.9.0"
 
 firebaseBom = "32.1.1"
-firebaseMessagingKtx = "23.1.2"
+firebaseMessagingKtx = "23.2.0"
 
 roomRersion = "2.5.2"
+
+coilCompose = "2.4.0"
+
+squareupPicasso = "2.71828"
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "androidGradlePlugin" }
@@ -86,3 +90,7 @@ org-matrix-android-sdk2 = { module = "org.matrix.android:matrix-android-sdk2", v
 com-squareup-okhttp3-okhttp-bom = { module = "com.squareup.okhttp3:okhttp-bom", version.ref = "okhttp3" }
 com-squareup-okhttp3-okhttp = { group = "com.squareup.okhttp3", name = "okhttp" }
 com-squareup-okhttp3-logging-interceptor = { group = "com.squareup.okhttp3", name = "logging-interceptor" }
+
+coil-kt-compose = { module = "io.coil-kt:coil-compose", version.ref = "coilCompose" }
+
+com-squareup-picasso = { module = "com.squareup.picasso:picasso", version.ref = "squareupPicasso" }

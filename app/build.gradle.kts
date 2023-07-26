@@ -106,8 +106,8 @@ dependencies {
     implementation(libs.firebase.messaging.ktx)
 
     //coil
-    implementation("io.coil-kt:coil-compose:2.4.0")
+    implementation(libs.coil.kt.compose)
 
     //picasso
-    implementation("com.squareup.picasso:picasso:2.71828")
+    implementation(libs.com.squareup.picasso)
 }
